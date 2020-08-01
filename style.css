@@ -26,7 +26,8 @@ body{
 }
 .icon_wrapper{
     position: relative;
-    top: 300px;
+    top: 100px;
+    /* left: -5%; */
     grid-column: 4/9;
     width: 100%;
     text-align: center;
