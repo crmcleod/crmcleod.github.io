@@ -53,7 +53,7 @@ header{display: flex;
 }
 .icon_wrapper{
     position: relative;
-    top: 75px;
+    top: 5vw;
     /* left: -5%; */
     grid-column: 4/9;
     width: 100%;
