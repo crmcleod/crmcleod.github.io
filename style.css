@@ -8,6 +8,33 @@ body{
     display: grid;
     grid-template-columns: 10% 10% 10% 10% 7.5% 5% 7.5% 10% 10% 10% 10%;
 }
+header{display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 26vw;
+    left: 44vw;
+    grid-column: 5/8;
+}
+.boxup{
+    width: 1.5vw;
+    height: 2.2vw;
+    transition: ease 0.5s;
+}
+.boxup:hover{
+    background-color:white;
+    transition: 0.01s;
+    transform: translatey(800px) scale(1.2);
+}
+.boxdown{
+    width: 1.5vw;
+    height: 1.5vw;
+    transition: ease 0.5s;
+}
+.boxdown:hover{
+    background-color: rgb(255, 174, 0);
+    transition: 0.01s;
+    transform: translatey(-400px) scale(1.2);
+}
 #name_wrapper{ 
     grid-column: 1/13;
     font-size: 1.6vw;
