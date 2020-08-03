@@ -27,7 +27,7 @@ header{display: flex;
 }
 .boxdown{
     width: 1.5vw;
-    height: 1.5vw;
+    height: 2.2vw;
     transition: ease 0.5s;
 }
 .boxdown:hover{
