@@ -88,7 +88,7 @@ header{display: flex;
     justify-content: center ;
     position: relative;
     width:100%;
-    top: 50vw;
+    top: 65vw;
     display: flex;
     grid-column: 4/9;
 }
@@ -123,7 +123,7 @@ header{display: flex;
 #burger-world{
     height: 21vw;
     border-radius: 3%;
-    box-shadow: -9px 13px 32px -6px rgba(63,24,102,1);
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
     transition: all 1s ease;
 
 }
@@ -137,7 +137,7 @@ header{display: flex;
     height: 21vw;
     border-radius: 3%;
     margin-left: -10vw;
-    box-shadow: -9px 13px 32px -6px rgba(63,24,102,1);
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
     transition: all 1s ease;
 
 }
@@ -153,7 +153,7 @@ header{display: flex;
     margin-left: -10vw;
     /* columns: 3/4; */
     border-radius: 3%;
-    box-shadow: -9px 13px 32px -6px rgba(63,24,102,1);
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
     transition: all 1s ease;
 
 
@@ -169,7 +169,7 @@ header{display: flex;
     height: 21vw;
     margin-left: -10vw;
     border-radius: 3%;
-    box-shadow: -9px 13px 32px -6px rgba(63,24,102,1);
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
     transition: all 1s ease;
 
 
@@ -181,13 +181,42 @@ header{display: flex;
     
      /* margin-right: 10vw; */
 }
-
+#mh{
+    height: 21vw;
+    margin-right: -5vw;
+    margin-top: 1vw;
+    margin-left: -10vw;
+    border-radius: 3%;
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
+    transition: all 1s ease;
+}
+#mh:hover{
+        transition: 0.5s;
+        transform: rotate(-3deg) scale(1.1);
+        margin-left: -7vw;
+        z-index: 1;
+}
+#friendo{
+    height: 21vw;
+    margin-top: 1vw;
+    margin-left: 14vw;
+    border-radius: 3%;
+    box-shadow: -9px 13px 32px -6px rgb(33, 7, 59);
+    transition: all 1s ease;
+    background-color: rgb(194, 200, 228);
+}
+#friendo:hover{
+    transition: 0.5s;
+    transform: rotate(-3deg) scale(1.1);
+    margin-right: 3vw;
+    margin-left: 10vw;
+}
 #icewrapper{
     grid-row: 3/11;
     /* display: grid;
     grid-template-columns: 25% 25% 25% 25%; */
     position: absolute;
-    top: 90vw;
+    top: 105vw;
     left: 22vw;
     margin-bottom: 1vw;
 }
