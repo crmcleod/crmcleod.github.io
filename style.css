@@ -192,7 +192,7 @@ header{display: flex;
 }
 #mh:hover{
         transition: 0.5s;
-        transform: rotate(-3deg) scale(1.1);
+        transform: rotate(3deg) scale(1.1);
         margin-left: -7vw;
         z-index: 1;
 }
@@ -207,7 +207,7 @@ header{display: flex;
 }
 #friendo:hover{
     transition: 0.5s;
-    transform: rotate(-3deg) scale(1.1);
+    transform: rotate(-2deg) scale(1.1);
     margin-right: 3vw;
     margin-left: 10vw;
 }
