@@ -106,9 +106,10 @@
             <p>
                 >> Back on the app page, navigate again to the deploy tab and at the bottom of the page hit the 'deploy branch' button. 
                 <br>
-                >> Once you have confirmation that the deployment was successful, navigate to the top right of the page. Next to open app is the More button. Click this and then click the run console option.
+                >> Once you have confirmation that the deployment was successful, navigate to the top right of the page. Next to the "open app" button is the "More" button. Click this and then click the run console option.
                 <br>
-                >> In the console run the command psql -d db_name -f db/your_file.sql where the db_name is the uri from the credentials page and 'your file' is whatever you named you .sql file in the db folder. (You may need to run this command twice).
+                >> In the console run the command:</p> <div class="code_block"> <code>psql -d db_name -f db/your_file.sql </code></div> 
+                <p> >> Where the db_name is the uri from the credentials page and 'your file' is whatever you named your.sql file in the db folder. (You may need to run this command twice).
                 <br>
                 >> Finally, start the console again and run the command ruby db/seeds.rb (your seeds file may have a different name, use that).
                 <br>

@@ -8,6 +8,7 @@ html{
     line-height: 1.7vw;
 }
 .code_block{
+    font-stretch: 2vw;
     padding: 1vw;
     border-radius: 0.5vw;
     background-color: rgba(0, 0, 0, 0.842);
@@ -23,6 +24,7 @@ p{
     max-width: fit-content;
     background-color: rgba(135, 117, 185, 0.767);
     box-shadow: -1px 11px 23px 5px rgba(0, 0, 0, 0.658);
+    line-height: 2.1vw;
 
 }
 img{
