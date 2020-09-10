@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <title> Heroku Hosting</title>
+    <link rel="stylesheet" href="heroku.css"/>
+    <body>
+        <h1>Deploying a ruby/sinatra/postgresql app to Heroku!</h1>
+
+        <h3>Disclaimer: this worked for me and took a lot of trying "this and that" so may not be the definitive guide...</h3>
+
+        <div id="files">
+            <p> >> First of all you are going to need to add some extra files to your root folder.
+                <br>
+                >> Either in the terminal or in VS Code create "Gemfile", "Procfile" and "config.ru"
+            </p>
+            
+            <img src="file_structure_rsp.png" alt="files"/>
+        </div>
+        <div id="Gemfile">
+            <h2>Gemfile</h2>
+            <div class="code_block">
+            <code>
+                source 'https://rubygems.org'
+                <br>
+                gem 'sinatra'
+                <br>
+                gem 'sinatra-contrib'
+                <br>
+                gem 'pg'
+                <br>
+                ruby '2.6.5'   // check your ruby version in the terminal `ruby --version` and adjust accordingly
+                <br>
+            </code>
+            </div>
+            <h2>Back to the terminal</h2>
+                <div class="code_block">
+                    <code>
+                        `bundle install`
+                    </code>
+                </div>
+        </div>
+        <div id="Procfile">
+            <h2>Procfile</h2>
+                <div class="code_block">
+                    <code>
+                        web: ruby app.rb // you may have a different name for your main .rb file, change accordingly
+                        <br>
+                    </code>
+                </div>
+        </div>
+        <div id="config">
+            <h2>config.ru</h2>
+                <div class="code_block">
+                    <code>
+                        require '/app.rb' // you may have a different name for your main .rb file, change accordingly
+                        <br>
+                        run Sinatra::Application
+                    </code>
+                </div>
+        </div>
+        <div id="heroku">
+            <h2> Head on over to heroku! </h2>
+                <p>
+                    >> Sign up and hit the "New" button and then "Create new app".
+                <br>
+                    >> Give your app a name and change the region to Europe.
+                <br>
+                    >> Next you'll be taken to the deployment page. Go down to the 'Deployment method' section and click on GitHub (you may need to connect your GitHub to Heroku at this point.)
+                <br>
+                    >>  Below this in the "Connect to GitHub" section search for your repo name and hit the connect button once found. Once connected choose whether or not you want automatic deploys.
+                <br>
+                    >> Navigate to the resources tab and search "Heroku Postgres" in the "add-ons" section. Select Plan name "Hobby Dev - Free" and then "Provision". Once added, click the "Heroku Postgres" title under the add-ons.
+                <br>
+                    >> Once the new page has opened and loaded, click on the "Settings" tab and then "View Credentials..."
+                <br>
+                </p>
+                <h2>Back to VS Code</h2>
+                <p> >> Into the sql_runner file; below 'begin' either delete or comment out the db = PG.connect... line and replace it with the following:</p>
+                <br>
+                    <div class="code_block">
+                        <code>
+                            db = PG.connect({
+                                <br>
+                                dbname: '', 
+                                <br>
+                                host: '', 
+                                <br>
+                                port: 5432, 
+                                <br>
+                                user: '',
+                                <br>
+                                password: ''
+                                <br>
+                                })
+                                <br>
+                        </code>
+                    </div>
+                    <br>
+                <p> 
+                    >> Replace each of these fields with those from the Heroku Postgres credentials page.
+                <br>
+                    >> Commit and push all of your changes, this should be everything done in VS code.
+            </p>
+            <img src="sql_runner.png" alt="sql_runner"/>
+
+            <h2> Back to Heroku again </h2>
+            <p>
+                >> Back on the app page, navigate again to the deploy tab and at the bottom of the page hit the 'deploy branch' button. 
+                <br>
+                >> Once you have confirmation that the deployment was successful, navigate to the top right of the page. Next to open app is the More button. Click this and then click the run console option.
+                <br>
+                >> In the console run the command psql -d db_name -f db/your_file.sql where the db_name is the uri from the credentials page and 'your file' is whatever you named you .sql file in the db folder. (You may need to run this command twice).
+                <br>
+                >> Finally, start the console again and run the command ruby db/seeds.rb (your seeds file may have a different name, use that).
+                <br>
+                >> You should now be able to close the console and at the top of the page hit the 'Open app' button.
+                <br>
+            </p>
+        </div>
+    </body>
+</html>
